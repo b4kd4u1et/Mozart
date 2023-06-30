@@ -8,6 +8,6 @@
 - Запрос музыки по названию
 
 Предложить идеи можно по следующим контакттом:  
-Email: qadyr.bagdaulet@gmail.com  
-Telegram: @Polzevatel  
+Email: <qadyr.bagdaulet@gmail.com>  
+Telegram: [@Polzevatel](https://t.me/Polzevatel)  
 Вы так же можете написать в чатах сообщества
