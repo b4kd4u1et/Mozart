@@ -18,6 +18,7 @@
 	- & - используется для обозначения необходимости использования нескольких типов данных;  
 	- | - используется для обозночения необходимости использования одного или нескольких типов данных;  
 	- ^ - используется для обозночения необходимости использования одного из нескольких типов данных;   
+	- : - используется как делитель при определении шаблона словаря(\<dict>).  
 2. Допускается использование как простых, так и составных[^1] и файловых типов данных.  
 	> Примеры:   
 	> bool, str, int являются простыми;  
@@ -143,6 +144,85 @@
 
 ## `_backendModule`
 
+В основном проверка статуса и разрешении пользователей, формирование статистики и работа с базами данных.
 
 ## `_administrativeModule`
+
+Управление рекламными постами, сбор статистики и изменение разрешении и статусов пользователей.  
+
+### `Photo`
+
+Любой формат изображения поддерживаемый телеграмом.  
+
+### `Video`
+
+Любой формат видео поддерживаемый телеграмом.  
+
+### `<last>`
+
+Последнее значение переменной указонного типа. Не обязательное значение, но было бы удобно иметь возможность отправлять запросы косающиеся последнего 
+отпраленного запроса.
+
+### `Time`
+
+Время в формате `день-час-минута`.
+
+### `MessageId`
+
+ID сообщеия.
+
+> [TelegramAPI messages](https://core.telegram.org/type/messages.Messages)
+
+### `Statistics`
+
+Набор статистических данных.
+
+- `message_id <MessageID> = ad_message_id`  
+- `views_count <int>`  
+> [TelegramAPI MessageViews](https://core.telegram.org/type/MessageViews)  
+- `life_time <Time>`  
+> Указывает сколько времени прошло со времени отправки/поста  
+- `reactions <dic<ReactionType:int>>`  
+> [TelegramAPI messageReactions](https://core.telegram.org/constructor/messageReactions)
+
+### `UserId`
+
+ID пользователя телеграм.
+
+> [TelegramAPI user](https://core.telegram.org/constructor/user)
+
+### `_administratorsSubmodul`
+
+Администраторы отвечают за рекламные посты, сбор статистики и управление админскими и модераторскими правами.
+
+#### `AdPosting(){<ResponseStatus&[MessageID]>}`
+
+На будущее...
+
+- `ad_text <str|.md|.html>`  
+> .md и .html используется для декорирования текста.  
+- `[ad_media] <Photo|Video>`  
+
+#### `AdStatistics(){<ResponseStatus^Statistics>}`
+
+Выводить статистику рекламного поста.
+
+- `ad_message_id <MessageID> = <last>`
+
+#### `NewModerator(){<ResponseStatus>}`
+
+Присвоевает права модератора.
+
+- `new_moderator_id <UserId>`  
+
+#### `NewAdmin(){<ResponseStatus>}`
+
+Присвоевает права администратора.
+
+- `new_admin_id <UserId>`
+
+#### `RemoveModerator(){<ResponseStatus>}
+
+- 
+### `_moderatorsSubmodul`
 
