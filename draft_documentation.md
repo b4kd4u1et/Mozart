@@ -197,7 +197,8 @@ ID пользователя телеграм.
 
 #### `AdPosting(){<ResponseStatus&[MessageID]>}`
 
-На будущее...
+На будущее...  
+Надо будет продумать оплату и контроль количество.
 
 - `ad_text <str|.md|.html>`  
 > .md и .html используется для декорирования текста.  
@@ -213,16 +214,55 @@ ID пользователя телеграм.
 
 Присвоевает права модератора.
 
-- `new_moderator_id <UserId>`  
+- `new_moderators_id <UserId>`  
 
 #### `NewAdmin(){<ResponseStatus>}`
 
 Присвоевает права администратора.
 
-- `new_admin_id <UserId>`
+- `new_admins_id <UserId>`
 
-#### `RemoveModerator(){<ResponseStatus>}
+#### `RemoveModerator(){<ResponseStatus>}`
 
-- 
+- `moderators_id <UserId>`
+
+#### `RemoveAdmin(){<ResponseStatus>}`
+
+- `admins_id <UserId>`
+
 ### `_moderatorsSubmodul`
+
+#### `Ban(){<ResponseStatus>}`
+
+Функция для бана(надеюсь не пригодится).
+
+- `user_id <UserId>`  
+- `ban_time <Time>`  
+- `ban_text <string>`  
+> Отправляется пользователю и хранится в базе данных. Обясняет причину бана.
+
+#### `Notice(){<ResponseStatus>}`
+
+Для предупреждения пользователя о неприемлемом поведении.
+
+- `user_id <UserId>`  
+- `notice_text <string>`  
+
+#### `UserName`
+
+Ник пользователя.
+
+#### `LastUsersTable`
+
+Данные о последних нескольких пользователей отправивших треки.
+
+- `user_name <UserName>`  
+- `user_id <UserId>`  
+- `last_messages_id <MessageId>`  
+- `last_messages_text <MessageText>`  
+- `notices_count <int>`  
+
+#### `GetLastUsers(){<ResponseStatus^LastUsersTable}`
+
+Для получения ID пользователей. Нужно будет хранить данные последних 5-10  пользователей бота (UserName,UserId,MessageId|MessageText).
 
