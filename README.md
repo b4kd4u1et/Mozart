@@ -9,5 +9,5 @@
 
 Предложить идеи можно по следующим контакттом:  
 Email: <qadyr.bagdaulet@gmail.com>  
-Telegram: [@Polzevatel](https://t.me/Polzevatel)  
+Telegram: [@b4kd4u1et](https://t.me/b4kd4u1et)  
 Вы так же можете написать в чатах сообщества
